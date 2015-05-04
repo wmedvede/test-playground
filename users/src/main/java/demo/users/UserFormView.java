@@ -43,6 +43,6 @@ public class UserFormView extends FormView<UserFormModel>
       user_name.setReadOnly(readOnly);
       user_lastName.setReadOnly(readOnly);
       user_birthday.setReadOnly(readOnly);
-      user_married.setReadOnly(readOnly);
+      user_married.setEnabled(!readOnly);
    }
 }
