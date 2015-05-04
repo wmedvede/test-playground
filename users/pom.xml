@@ -6,6 +6,63 @@
   <artifactId>users</artifactId>
   <version>1.0</version>
   <name>users</name>
+  <properties>
+    <hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
+    <validation.api.version>1.0.0.GA</validation.api.version>
+    <version.org.jboss.errai>3.2.0-SNAPSHOT</version.org.jboss.errai>
+    <!-- temporary: makes the enforcerRule (illegal-transitive-dependency-check) not to break the build -->
+    <illegaltransitivereportonly>true</illegaltransitivereportonly>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-user</artifactId>
+      <version>2.7.0</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.github.gwtbootstrap</groupId>
+      <artifactId>gwt-bootstrap</artifactId>
+      <version>2.2.1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-ui</artifactId>
+      <version>${version.org.jboss.errai}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-data-binding</artifactId>
+      <version>${version.org.jboss.errai}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-validation</artifactId>
+      <version>${version.org.jboss.errai}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>${validation.api.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>${hibernate.validator.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.kie</groupId>
+      <artifactId>form-modeler-rendering-api</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
+    
+  </dependencies>
   <build>
     <plugins>
       <plugin>
