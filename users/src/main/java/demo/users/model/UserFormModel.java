@@ -1,4 +1,4 @@
-package demo.users;
+package demo.users.model;
 
 import org.kie.formModeler.rendering.client.shared.FormModel;
 import org.jboss.errai.common.client.api.annotations.Portable;
@@ -9,29 +9,29 @@ import org.jboss.errai.common.client.api.annotations.MapsTo;
 
 @Portable
 @Bindable
-@Named("AddressFormModel")
-public class AddressFormModel extends FormModel
+@Named("UserFormModel")
+public class UserFormModel extends FormModel
 {
 
    @Valid
-   private Address address;
+   private User user;
 
-   public AddressFormModel()
+   public UserFormModel()
    {
    }
 
-   public AddressFormModel(@MapsTo("address") Address address)
+   public UserFormModel(@MapsTo("user") User user)
    {
-      this.address = address;
+      this.user = user;
    }
 
-   public Address getAddress()
+   public User getUser()
    {
-      return address;
+      return user;
    }
 
-   public void setAddress(Address address)
+   public void setUser(User user)
    {
-      this.address = address;
+      this.user = user;
    }
 }

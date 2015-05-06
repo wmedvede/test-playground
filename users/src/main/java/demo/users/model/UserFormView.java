@@ -1,7 +1,6 @@
-package demo.users;
+package demo.users.model;
 
 import org.kie.formModeler.rendering.client.view.FormView;
-import demo.users.UserFormModel;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 import javax.inject.Named;
 import com.github.gwtbootstrap.client.ui.TextBox;

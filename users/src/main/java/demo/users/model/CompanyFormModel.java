@@ -1,4 +1,4 @@
-package demo.users;
+package demo.users.model;
 
 import org.kie.formModeler.rendering.client.shared.FormModel;
 import org.jboss.errai.common.client.api.annotations.Portable;
