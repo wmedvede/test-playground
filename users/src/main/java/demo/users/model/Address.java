@@ -9,61 +9,61 @@ public class Address implements java.io.Serializable
 
    static final long serialVersionUID = 1L;
 
-   @org.kie.api.definition.type.Label(value = "Street")
-   private java.lang.String street;
-   @org.kie.api.definition.type.Label(value = "Number")
-   private java.lang.Integer number;
-   @org.kie.api.definition.type.Label(value = "CP")
-   private java.lang.String cp;
-   @org.kie.api.definition.type.Label(value = "City")
-   private java.lang.String city;
+   @org.kie.api.definition.type.Label("Street")
+   private String street;
+   @org.kie.api.definition.type.Label("Number")
+   private Integer number;
+   @org.kie.api.definition.type.Label("CP")
+   private String cp;
+   @org.kie.api.definition.type.Label("City")
+   private String city;
 
    public Address()
    {
    }
 
-   public java.lang.String getStreet()
+   public String getStreet()
    {
       return this.street;
    }
 
-   public void setStreet(java.lang.String street)
+   public void setStreet(String street)
    {
       this.street = street;
    }
 
-   public java.lang.Integer getNumber()
+   public Integer getNumber()
    {
       return this.number;
    }
 
-   public void setNumber(java.lang.Integer number)
+   public void setNumber(Integer number)
    {
       this.number = number;
    }
 
-   public java.lang.String getCp()
+   public String getCp()
    {
       return this.cp;
    }
 
-   public void setCp(java.lang.String cp)
+   public void setCp(String cp)
    {
       this.cp = cp;
    }
 
-   public java.lang.String getCity()
+   public String getCity()
    {
       return this.city;
    }
 
-   public void setCity(java.lang.String city)
+   public void setCity(String city)
    {
       this.city = city;
    }
 
-   public Address(java.lang.String street, java.lang.Integer number,
-         java.lang.String cp, java.lang.String city)
+   public Address(String street, Integer number,
+         String cp, String city)
    {
       this.street = street;
       this.number = number;

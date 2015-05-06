@@ -9,35 +9,38 @@ public class User implements java.io.Serializable
 
    static final long serialVersionUID = 1L;
 
-   @org.kie.api.definition.type.Label(value = "User Name")
-   private java.lang.String name;
-   @org.kie.api.definition.type.Label(value = "User Last Name")
-   private java.lang.String lastName;
-   @org.kie.api.definition.type.Label(value = "Birthday")
+   @org.kie.api.definition.type.Label("User Name")
+   private String name;
+   @org.kie.api.definition.type.Label("User Last Name")
+   private String lastName;
+   @org.kie.api.definition.type.Label("Birthday")
    private java.util.Date birthday;
-   @org.kie.api.definition.type.Label(value = "Married")
-   private java.lang.Boolean married;
+   @org.kie.api.definition.type.Label("Married")
+   private Boolean married;
+
+   @org.kie.api.definition.type.Label(value = "Identifier")
+   private String id;
 
    public User()
    {
    }
 
-   public java.lang.String getName()
+   public String getName()
    {
       return this.name;
    }
 
-   public void setName(java.lang.String name)
+   public void setName(String name)
    {
       this.name = name;
    }
 
-   public java.lang.String getLastName()
+   public String getLastName()
    {
       return this.lastName;
    }
 
-   public void setLastName(java.lang.String lastName)
+   public void setLastName(String lastName)
    {
       this.lastName = lastName;
    }
@@ -52,23 +55,34 @@ public class User implements java.io.Serializable
       this.birthday = birthday;
    }
 
-   public java.lang.Boolean getMarried()
+   public Boolean getMarried()
    {
       return this.married;
    }
 
-   public void setMarried(java.lang.Boolean married)
+   public void setMarried(Boolean married)
    {
       this.married = married;
    }
 
-   public User(java.lang.String name, java.lang.String lastName,
-         java.util.Date birthday, java.lang.Boolean married)
+   public String getId()
+   {
+      return this.id;
+   }
+
+   public void setId(String id)
+   {
+      this.id = id;
+   }
+
+   public User(String name, String lastName,
+         java.util.Date birthday, Boolean married, String id)
    {
       this.name = name;
       this.lastName = lastName;
       this.birthday = birthday;
       this.married = married;
+      this.id = id;
    }
 
 }

@@ -9,58 +9,56 @@ public class Company implements java.io.Serializable
 
    static final long serialVersionUID = 1L;
 
-   @org.kie.api.definition.type.Label(value = "Name")
-   @org.kie.api.definition.type.Position(value = 1)
-   private java.lang.String name;
-   @org.kie.api.definition.type.Label(value = "ID")
-   @org.kie.api.definition.type.Position(value = 0)
-   private java.lang.String id;
-   @org.kie.api.definition.type.Label(value = "Employees number")
-   private java.lang.Integer employees;
+   @org.kie.api.definition.type.Label("Name")
+   private String name;
+   @org.kie.api.definition.type.Label("Identifier")
+   private String id;
+   @org.kie.api.definition.type.Label("Employees number")
+   private Integer employees;
 
    public Company()
    {
    }
 
-   public java.lang.String getName()
+   public String getName()
    {
       return this.name;
    }
 
-   public void setName(java.lang.String name)
+   public void setName(String name)
    {
       this.name = name;
    }
 
-   public java.lang.String getId()
+   public String getId()
    {
       return this.id;
    }
 
-   public void setId(java.lang.String id)
+   public void setId(String id)
    {
       this.id = id;
    }
 
-   public java.lang.Integer getEmployees()
+   public Integer getEmployees()
    {
       return this.employees;
    }
 
-   public void setEmployees(java.lang.Integer employees)
+   public void setEmployees(Integer employees)
    {
       this.employees = employees;
    }
 
-   public Company(java.lang.String name, java.lang.String id,
-         java.lang.Integer employees)
+   public Company(String name, String id,
+         Integer employees)
    {
       this.name = name;
       this.id = id;
       this.employees = employees;
    }
 
-   public Company(java.lang.String id, java.lang.String name)
+   public Company(String id, String name)
    {
       this.id = id;
       this.name = name;
