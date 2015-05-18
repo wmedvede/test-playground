@@ -1,6 +1,6 @@
 package demo.users.model;
 
-import org.kie.formModeler.rendering.client.shared.FormModel;
+import org.livespark.formmodeler.rendering.client.shared.FormModel;
 import org.jboss.errai.common.client.api.annotations.Portable;
 import org.jboss.errai.databinding.client.api.Bindable;
 import javax.inject.Named;

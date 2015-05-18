@@ -102,9 +102,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.kie</groupId>
-      <artifactId>form-modeler-rendering-api</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <groupId>org.livespark</groupId>
+      <artifactId>livespark-form-modeler-rendering-api</artifactId>
+      <version>6.3.0-SNAPSHOT</version>
     </dependency>
     
   </dependencies>

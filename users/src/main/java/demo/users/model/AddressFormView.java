@@ -1,6 +1,6 @@
 package demo.users.model;
 
-import org.kie.formModeler.rendering.client.view.FormView;
+import org.livespark.formmodeler.rendering.client.view.FormView;
 import demo.users.model.AddressFormModel;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 import javax.inject.Named;
