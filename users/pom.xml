@@ -24,7 +24,7 @@
         <updatePolicy>daily</updatePolicy>
       </snapshots>
     </repository>
-    <repository>
+    <!-- repository>
       <id>sonatype</id>
       <url>http://oss.sonatype.org/content/repositories/snapshots</url>
       <snapshots>
@@ -33,7 +33,7 @@
       <releases>
         <enabled>false</enabled>
       </releases>
-    </repository>
+    </repository-->
   </repositories>
 
   <properties>
