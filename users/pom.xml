@@ -187,7 +187,7 @@
           <noServer>false</noServer>
           <extraJvmArgs>-Xmx2048m -XX:CompileThreshold=7000 -XX:MaxPermSize=256M -Derrai.jboss.javaopts="-XX:MaxPermSize=256m"</extraJvmArgs>
           <disableCastChecking>true</disableCastChecking>
-          <runTarget>index.html</runTarget>
+          <runTarget>index.jsp</runTarget>
           <soyc>false</soyc>
           <hostedWebapp>src/main/webapp</hostedWebapp>
           <draftCompile>true</draftCompile>
