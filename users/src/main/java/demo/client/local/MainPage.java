@@ -9,10 +9,11 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import com.github.gwtbootstrap.client.ui.TextBox;
+import com.google.gwt.user.client.ui.Composite;
 
 @Page( role = DefaultPage.class )
 @Templated
-public class MainPage {
+public class MainPage extends Composite {
 
     @Inject
     @DataField
