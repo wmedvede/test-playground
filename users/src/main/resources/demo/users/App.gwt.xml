@@ -13,4 +13,5 @@
   <inherits name="org.livespark.formmodeler.rendering.FormModelerRenderingAPI"/>
 
   <source path="model"/>
+  <collapse-all-properties />
 </module>
