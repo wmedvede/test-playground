@@ -77,6 +77,13 @@
 
     <dependency>
       <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-ioc-bus-support</artifactId>
+      <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
       <artifactId>errai-javax-enterprise</artifactId>
       <version>${version.org.jboss.errai}</version>
       <scope>provided</scope>
@@ -86,14 +93,12 @@
       <groupId>org.jboss.errai</groupId>
       <artifactId>errai-cdi-client</artifactId>
       <version>${version.org.jboss.errai}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jboss.errai</groupId>
       <artifactId>errai-weld-integration</artifactId>
       <version>${version.org.jboss.errai}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
