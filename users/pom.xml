@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>demo</groupId>
   <artifactId>users</artifactId>
@@ -24,16 +25,9 @@
         <updatePolicy>daily</updatePolicy>
       </snapshots>
     </repository>
-    <!-- repository>
-      <id>sonatype</id>
-      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </repository-->
+    <!-- repository> <id>sonatype</id> <url>http://oss.sonatype.org/content/repositories/snapshots</url> 
+      <snapshots> <enabled>true</enabled> </snapshots> <releases> <enabled>false</enabled> 
+      </releases> </repository -->
   </repositories>
 
   <properties>
@@ -42,7 +36,8 @@
     <version.org.jboss.errai>3.2.0-SNAPSHOT</version.org.jboss.errai>
     <gwt.version>2.7.0</gwt.version>
     <version.org.slf4j>1.7.2</version.org.slf4j>
-    <!-- temporary: makes the enforcerRule (illegal-transitive-dependency-check) not to break the build -->
+    <!-- temporary: makes the enforcerRule (illegal-transitive-dependency-check) 
+      not to break the build -->
     <illegaltransitivereportonly>true</illegaltransitivereportonly>
   </properties>
 
@@ -57,44 +52,92 @@
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
       <version>${gwt.version}</version>
+      <scope>provided</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>com.github.gwtbootstrap</groupId>
       <artifactId>gwt-bootstrap</artifactId>
       <version>2.2.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-bus</artifactId>
+      <version>${version.org.jboss.errai}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-ioc</artifactId>
+      <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-javax-enterprise</artifactId>
+      <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-cdi-client</artifactId>
+      <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-weld-integration</artifactId>
+      <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-jaxrs-client</artifactId>
+      <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jboss.errai</groupId>
       <artifactId>errai-ui</artifactId>
       <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jboss.errai</groupId>
       <artifactId>errai-navigation</artifactId>
       <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jboss.errai</groupId>
       <artifactId>errai-data-binding</artifactId>
       <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>org.jboss.errai</groupId>
       <artifactId>errai-validation</artifactId>
       <version>${version.org.jboss.errai}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
       <version>${validation.api.version}</version>
+      <scope>provided</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
@@ -112,7 +155,7 @@
       <artifactId>livespark-form-modeler-rendering-api</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    
+
   </dependencies>
   <build>
     <plugins>
@@ -130,7 +173,7 @@
         <configuration>
           <logLevel>INFO</logLevel>
           <noServer>false</noServer>
-          <extraJvmArgs>-Xmx2048m -XX:CompileThreshold=7000 -XX:MaxPermSize=256M  -Derrai.jboss.javaopts="-XX:MaxPermSize=256m"</extraJvmArgs>
+          <extraJvmArgs>-Xmx2048m -XX:CompileThreshold=7000 -XX:MaxPermSize=256M -Derrai.jboss.javaopts="-XX:MaxPermSize=256m"</extraJvmArgs>
           <disableCastChecking>true</disableCastChecking>
           <runTarget>index.html</runTarget>
           <soyc>false</soyc>
@@ -154,6 +197,14 @@
               </includes>
             </fileset>
           </filesets>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <packagingExcludes>**/javax/**/*.*,**/client/local/**/*.class</packagingExcludes>
+          <outputFileNameMapping>@{artifactId}@-@{baseVersion}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>
         </configuration>
       </plugin>
     </plugins>
