@@ -39,9 +39,9 @@ public class MainPage extends Composite {
         logger.debug( "Found " + listViewBeans.size() + " ListView beans" );
 
         for ( IOCBeanDef<ListView> listViewBean : listViewBeans ) {
-            logger.debug( "Processing " + listViewBean.getName() );
+            logger.debug( "Processing " + listViewBean.getBeanClass().getName() );
             if ( isInstantiable( listViewBean ) ) {
-                logger.debug( "Instantiating " + listViewBean.getName() );
+                logger.debug( "Instantiating " + listViewBean.getBeanClass().getName() );
                 final ListView instance = listViewBean.getInstance();
                 container.add( instance );
             }
