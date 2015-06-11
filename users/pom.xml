@@ -110,6 +110,12 @@
 
     <dependency>
       <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-jaxrs-provider</artifactId>
+      <version>${version.org.jboss.errai}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
       <artifactId>errai-ui</artifactId>
       <version>${version.org.jboss.errai}</version>
       <scope>provided</scope>
@@ -141,6 +147,12 @@
       <artifactId>cdi-api</artifactId>
       <version>1.1</version>
       <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-javax-enterprise</artifactId>
+      <version>${version.org.jboss.errai}</version>
     </dependency>
 
     <dependency>
