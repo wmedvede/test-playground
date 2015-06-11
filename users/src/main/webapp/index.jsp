@@ -10,7 +10,7 @@
 <meta name="author" content="">
 
 <script type="text/javascript">
-  erraiJaxRsApplicationRoot = "/users/rest";
+  erraiJaxRsApplicationRoot = "/demo/rest";
 </script>
 <script type="text/javascript" language="javascript" src="<%=contextPath%>/app/app.nocache.js"></script>
 </head>

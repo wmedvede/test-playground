@@ -6,7 +6,7 @@
   <groupId>demo</groupId>
   <artifactId>users</artifactId>
   <version>1.0</version>
-  <name>users</name>
+  <name>demo</name>
   <packaging>war</packaging>
 
   <!-- Repositories -->
@@ -176,6 +176,7 @@
 
   </dependencies>
   <build>
+  <finalName>demo</finalName>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
