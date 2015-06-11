@@ -49,7 +49,16 @@ public class MainPage extends Composite {
     }
 
     private boolean isInstantiable( IOCBeanDef<ListView> listViewBean ) {
-        return listViewBean.isConcrete() && listViewBean.isActivated();
+        boolean concrete = listViewBean.isConcrete();
+        boolean activated = listViewBean.isActivated();
+        boolean instatiable = concrete && activated;
+
+        if ( !concrete )
+            logger.trace( listViewBean.getBeanClass().getName() + " is not concrete." );
+        if ( !activated )
+            logger.trace( listViewBean.getBeanClass().getName() + " is not activated." );
+
+        return instatiable;
     }
 
 }
