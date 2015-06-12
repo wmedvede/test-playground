@@ -64,6 +64,12 @@
 
     <dependency>
       <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-jboss-as-support</artifactId>
+      <version>${version.org.jboss.errai}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
       <artifactId>errai-bus</artifactId>
       <version>${version.org.jboss.errai}</version>
     </dependency>
@@ -189,6 +195,7 @@
   </dependencies>
   <build>
   <finalName>demo</finalName>
+  <outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
