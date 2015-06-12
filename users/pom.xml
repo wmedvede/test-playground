@@ -4,7 +4,7 @@
   xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>demo</groupId>
-  <artifactId>users</artifactId>
+  <artifactId>demo</artifactId>
   <version>1.0</version>
   <name>demo</name>
   <packaging>war</packaging>
@@ -36,6 +36,11 @@
     <version.org.jboss.errai>3.2.0-SNAPSHOT</version.org.jboss.errai>
     <gwt.version>2.7.0</gwt.version>
     <version.org.slf4j>1.7.2</version.org.slf4j>
+    <errai.version>3.2.0-SNAPSHOT</errai.version>
+    <errai.dev.context>${project.artifactId}</errai.dev.context>
+    <as.version>8.1.0.Final</as.version>
+    <!-- Add the absolute path for $JBOSS_HOME below to manage another instance -->
+    <errai.jboss.home>${project.build.directory}/wildfly-${as.version}</errai.jboss.home>
     <!-- temporary: makes the enforcerRule (illegal-transitive-dependency-check) 
       not to break the build -->
     <illegaltransitivereportonly>true</illegaltransitivereportonly>
@@ -65,6 +70,12 @@
     <dependency>
       <groupId>org.jboss.errai</groupId>
       <artifactId>errai-jboss-as-support</artifactId>
+      <version>${version.org.jboss.errai}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.errai</groupId>
+      <artifactId>errai-cdi-jboss</artifactId>
       <version>${version.org.jboss.errai}</version>
     </dependency>
 
@@ -194,7 +205,7 @@
 
   </dependencies>
   <build>
-  <finalName>demo</finalName>
+  <finalName>${project.artifactId}</finalName>
   <outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
     <plugins>
       <plugin>
@@ -211,11 +222,12 @@
         <configuration>
           <logLevel>INFO</logLevel>
           <noServer>false</noServer>
-          <extraJvmArgs>-Xmx2048m -XX:CompileThreshold=7000 -XX:MaxPermSize=256M -Derrai.jboss.javaopts="-XX:MaxPermSize=256m"</extraJvmArgs>
+          <extraJvmArgs>-Xmx2048m -XX:CompileThreshold=7000 -XX:MaxPermSize=256M -Derrai.jboss.javaopts="-XX:MaxPermSize=256m" -Derrai.jboss.home=${errai.jboss.home} -Derrai.dev.context=${errai.dev.context}</extraJvmArgs>
           <disableCastChecking>true</disableCastChecking>
-          <runTarget>index.jsp</runTarget>
+          <runTarget>${errai.dev.context}/index.jsp</runTarget>
           <soyc>false</soyc>
           <hostedWebapp>src/main/webapp</hostedWebapp>
+          <server>org.jboss.errai.cdi.server.gwt.EmbeddedWildFlyLauncher</server>
           <draftCompile>true</draftCompile>
           <compileSourcesArtifacts>
             <compileSourcesArtifact>org.livespark:livespark-form-modeler-rendering-api</compileSourcesArtifact>
@@ -247,6 +259,31 @@
           <packagingExcludes>**/javax/**/*.*,**/client/local/**/*.class</packagingExcludes>
           <outputFileNameMapping>@{artifactId}@-@{baseVersion}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.wildfly</groupId>
+                  <artifactId>wildfly-dist</artifactId>
+                  <version>${as.version}</version>
+                  <type>zip</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${project.build.directory}</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
