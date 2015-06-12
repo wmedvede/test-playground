@@ -2,3 +2,5 @@
 .errai/
 .settings/
 src/main/webapp/WEB-INF/classes/
+.classpath
+.project
