@@ -1,2 +1,0 @@
-org.jboss.errai.demo.client.local.office.OfficeCrud
-org.jboss.errai.demo.client.local.office.OfficeItemWidget
